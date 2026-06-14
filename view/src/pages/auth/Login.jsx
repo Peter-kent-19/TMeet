@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function CircleCheckbox() {
   return (
@@ -17,12 +17,14 @@ function CircleCheckbox() {
 
 
 export default function Login() {
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
-        alert('hi')
-    },[]);
+        setIsVisible(true);
+    }, []);
     
     return (
-        <div>
+        <div className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <h1 className="pt-5 text-5xl logo text-center text-blue-500">
                 TMeet
             </h1>
@@ -41,11 +43,11 @@ export default function Login() {
                 <CircleCheckbox />
                 
                 <form>
-                    <input className="my-5 border w-full rounded-[20px] p-3" placeholder="Email..." type="text" />
+                    <input className="my-5 border w-full rounded-[20px] p-3" placeholder="Email..." type="email" />
                     <input className="my-5 border w-full rounded-[20px] p-3" placeholder="Password..." type="password" />
                     
                     <p className="text-blue-400 text-center my-5">
-                        <Link to='/auth/forg?'>
+                        <Link to='/auth/forgot'>
                             Forgot Passwords?
                         </Link>
                     </p>
