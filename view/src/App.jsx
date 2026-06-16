@@ -1,8 +1,12 @@
 import React from 'react'
 import RootLayout from './layouts/RootLayout.jsx'
 import Dashboard from './layouts/Dashboard.jsx'
+
 import Login from './pages/auth/Login.jsx'
-import ForgotPassword from './pages/auth/ForgotPassword.jsx'
+import Signin from './pages/auth/Signin.jsx'
+import MakePassword from './pages/auth/MakePassword.jsx'
+import EmailVerifivation from './pages/auth/EmailVerification.jsx'
+
 import './App.css'
 
 import {
@@ -21,8 +25,9 @@ const router = createBrowserRouter(
             {/* Authentication & Guest entrance */}
             <Route path="/auth" element={<RootLayout />}>
                 <Route index element={<Login />} />
-                <Route path="sign" element="Signin" />
-                <Route path="forg" element={<ForgotPassword />} />
+                <Route path="sign" element={<Signin />} />
+                <Route path="forgotpassword/verifyemail" element={<EmailVerifivation />} />
+                <Route path="forgotpassword/new" element={<MakePassword />} />
             </Route>
             
             {/* Logged in User */}

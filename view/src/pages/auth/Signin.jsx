@@ -32,35 +32,31 @@ export default function Login() {
                 Found by Peter Kent 
             </p>
             <p className="text-3xl font-extrabold text-slate-500 text-center py-5 my-5">
-                Welcome Back on TMeet!
+                Get started 
             </p>
 
             <div className="form p-5 mt-5 bg-gray-100 [border-radius:50px]">
                 <p className="text-center text-2xl font-extrabold text-slate-500 py-5">
-                    Login
+                    Sign in
                 </p>
 
                 <CircleCheckbox />
                 
                 <form>
-                    <input className="my-5 border w-full rounded-lg p-3" placeholder="Email..." type="email" />
-                    <input className="my-5 border w-full rounded-lg p-3" placeholder="Password..." type="password" />
+                    <input className="my-5 border w-full rounded-lg p-3" placeholder="Fullname eg: Odo Peter Chinedu" type="text" />
+                    <input className="my-5 border w-full rounded-lg p-3" placeholder="Phone eg: 07000000000" type="phone" />
+                    <input className="my-5 border w-full rounded-lg p-3" placeholder="Email eg: peter@gmail.com" type="email" />
                     
-                    <p className="text-blue-400 text-center my-5">
-                        <Link to='/auth/forgotpassword/verifyemail'>
-                            Forgot Passwords?
-                        </Link>
-                    </p>
                     
                     <button className="bg-slate-800 w-full p-5 mt-5 text-white rounded-lg">
-                        Login Now
+                        Continue »
                     </button>
                     
                     <p className="text-blue-400 text-center py-5">
-                        <Link to='/auth/sign'>
-                            Create Account? 
+                        <Link to='/auth/'>
+                            Already a member?
                             <span className="underline pl-2">
-                                Sign in
+                                Login
                             </span>
                         </Link>
                     </p>
