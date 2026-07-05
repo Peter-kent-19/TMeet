@@ -1,4 +1,4 @@
-export default function MakePassword(){
+export default function MakePassword({title, description}){
     return (
         <div className="p-4">
             <button className="h-[50px] w-[50px] flex justify-center itrms-center text-gray-500 text-5xl bg-slate-300 rounded-[50%]">
@@ -6,11 +6,11 @@ export default function MakePassword(){
             </button>
 
             <p className="py-5 text-3xl">
-                New Password
+                {title}
             </p>
             
             <p className="text-xl text-slate-500">
-                Enter new Password
+                {description}
             </p>
             
             <div className="align-center">
