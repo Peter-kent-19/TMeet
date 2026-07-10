@@ -17,31 +17,21 @@ export default function Home() {
     const [newAnn, setNewAnn] = useState('');
 
     // Handle Principal adding a new announcement
-    const addAnnouncement = () => {
-        if (newAnn.trim()) {
-            setAnnouncements([...announcements, { id: Date.now(), title: 'New Announcement', content: newAnn }]);
-            setNewAnn('');
-        }
-    };
+    //const addAnnouncement = () => {
+    //    if (newAnn.trim()) {
+    //        setAnnouncements([...announcements, { id: Date.now(), title: 'New Announcement', content: newAnn }]);
+    //        setNewAnn('');
+    //    }
+    //};
 
     return (
         <div className="bg-slate-100 min-h-[100vh] overflow-auto">
-            <Header />
             
-            {/* Principal status banner */}
-            {currentUser.isPrincipal && (
-                <div className="px-4 py-2 italic text-slate-600 flex items-center gap-2">
-                    <p>You are the principal</p>
-                    {/* Add announcement section for Principal */}
-                    <input 
-                        value={newAnn} 
-                        onChange={(e) => setNewAnn(e.target.value)}
-                        placeholder="New announcement..."
-                        className="bg-white border rounded px-2"
-                    />
-                    <button onClick={addAnnouncement} className="bg-slate-800 text-white px-3 py-1 rounded text-sm">Post</button>
-                </div>
-            )}
+            {/* Render the header */}
+            {currentUser.isPrincipal 
+                ? <Header isPrincippal="true" />
+                : <Header isPrincippal="false" />
+            }
 
             {/* Announcements grid */}
             <div className="p-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

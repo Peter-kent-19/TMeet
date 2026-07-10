@@ -2,12 +2,13 @@
 import { Link } from 'react-router-dom';
 
 // Define the Header component for the dashboard
-export default function Header() {
+export default function Header({isPrincippal}) {
     // Retrieve the 'currentUser' from localStorage to display personalized info
     const currentUserRaw = localStorage.getItem('currentUser');
     // Parse the user data or default to an empty object if not found
     const currentUser = currentUserRaw ? JSON.parse(currentUserRaw) : {};
 
+    
     // Return the JSX for the header
     return (
         // Main wrapper container
@@ -32,16 +33,26 @@ export default function Header() {
                     <div className="h-[40px] w-[40px] rounded-[50%] bg-slate-200"></div>
                 </div>
             </div>
+            
             {/* Bottom navigation section */}
-            <div className="py-4 text-xl bg-slate-200 flex justify-evenly">
-                {/* Link to the main announcements page (home) */}
-                <Link to="/">
-                    <div className="">Announcements</div>
-                </Link>
+            <div className="py-4 items-center text-auto bg-white flex justify-evenly">
                 {/* Link to the meetings management page */}
                 <Link to="/meets">
                     <div className="text-slate-500">Meetings</div>
                 </Link>
+                
+                {/* Link to the main announcements page (home) */}
+                <Link to="/">
+                    <div className="">Announcements</div>
+                </Link>
+                
+                
+                {/* Show link button to the creation page */}
+                {isPrincippal === 'true'  
+                    ?<Link to='/create'>
+                        <button className='bg-blue-500 py-[5px] px-3 text-white rounded-xl'>+ create</button>
+                    </Link>
+                : ''}
             </div>
         </div>
     )

@@ -9,6 +9,7 @@ import EmailVerifivation from './pages/auth/EmailVerification.jsx'
     
 import Home from './pages/main/Home.jsx'
 import Meetings from './pages/main/Meetings.jsx'
+import Create from './pages/main/Create.jsx'
 
 import './App.css'
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
                 <Route index element={<Home />} />
                 <Route path="meets" element={<Meetings />} />
                 <Route path="room" element="Chat Room" />
+                <Route path="create" element={<Create />} />          
             </Route>
         </>
     )
