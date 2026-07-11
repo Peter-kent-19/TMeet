@@ -1,10 +1,17 @@
 
 // Import common components
 import Header from './../../components/Header.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Define the Home component
 export default function Home() {
+    // State to handle the fade-in animation of the page
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+        setIsVisible(true); // Set visibility to true after mount
+    }, []);
+
+    
     // Retrieve current user
     const currentUserRaw = localStorage.getItem('currentUser');
     const currentUser = currentUserRaw ? JSON.parse(currentUserRaw) : {};
@@ -25,7 +32,7 @@ export default function Home() {
     //};
 
     return (
-        <div className="bg-slate-100 min-h-[100vh] overflow-auto">
+        <div className={`bg-slate-100 min-h-[100vh] overflow-auto transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             
             {/* Render the header */}
             {currentUser.isPrincipal 

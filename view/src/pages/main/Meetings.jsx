@@ -1,9 +1,18 @@
 
 // Import the common Header component
 import Header from './../../components/Header.jsx';
+import { useState, useEffect } from 'react';
+
 
 // Define the Meetings component to show scheduled or past meetings
 export default function Meetings() {
+    // State to handle the fade-in animation of the page
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+        setIsVisible(true); // Set visibility to true after mount
+    }, []);
+
+    
     // Retrieve current user
     const currentUserRaw = localStorage.getItem('currentUser');
     const currentUser = currentUserRaw ? JSON.parse(currentUserRaw) : {};
@@ -56,18 +65,18 @@ export default function Meetings() {
     // Return the JSX structure for the meetings page
     return (
         // Main container with light background and scrollability
-        <div className="bg-slate-100 min-h-[100vh] overflow-auto">
+        <div className={`bg-slate-100 min-h-[100vh] overflow-auto transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             {/* Render the header */}
             {currentUser.isPrincipal 
                 ? <Header isPrincippal="true" />
                 : <Header isPrincippal="false" />
             }            
             {/* Main content area grid for meeting cards */}
-            <div className="p-4 grid gap-4 md:grid-cols-2">
+            <div className="p-4 grid gap-2 md:grid-cols-2">
                 {meetings.map(meeting => (
                     // Individual meeting card
                     <div key={meeting.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-                        <h2 className="text-xl font-bold text-slate-800">{meeting.title}</h2>
+                        <h2 className="text-auto text-slate-800">{meeting.title}</h2>
                     
                         <div className="mt-4 flex gap-2 flex-wrap justify-between text-[12px] text-gray-500">
                             <div>{meeting.time}</div>
