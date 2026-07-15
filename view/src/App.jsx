@@ -41,13 +41,15 @@ const router = createBrowserRouter(
                 <Route path="meets" element={<Meetings />} />
                 <Route path="room" element="Chat Room" />
                 <Route path="create" element={<Create />} />          
+                <Route path="create-ann" element="Announcement Creation Page" />          
+                <Route path="create-meet" element="Meeting Creation Page" />          
             </Route>
         </>
     )
 )
 
 const App = () => {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router}/>
 }
 
 

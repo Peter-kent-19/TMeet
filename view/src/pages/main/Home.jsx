@@ -41,7 +41,7 @@ export default function Home() {
             }
 
             {/* Announcements grid */}
-            <div className="p-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="max-w-[700px] m-auto p-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {announcements.map(ann => (
                     <div key={ann.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
                         <h2 className="text-lg font-bold text-slate-700">{ann.title}</h2>

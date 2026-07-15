@@ -3,7 +3,7 @@ export default function EmailVerifivation() {
     // Return the JSX for the verification screen
     return (
         // Main container with padding
-        <div className="p-4">
+        <div className="max-w-[700px] m-auto p-4">
             {/* Back button with styled circular background */}
             <button className="h-[50px] w-[50px] flex justify-center items-center text-gray-500 text-5xl bg-slate-300 rounded-[50%]">
                 ‹

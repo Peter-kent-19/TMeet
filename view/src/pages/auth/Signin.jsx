@@ -80,7 +80,7 @@ export default function Signin() {
     // Return the JSX for the Signin page
     return (
         // Container with conditional classes for the fade-in effect
-        <div className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`max-w-[700px] m-auto transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             {/* Project logo with custom font class */}
             <h1 className="pt-5 text-5xl logo text-center text-blue-500">
                 TMeet

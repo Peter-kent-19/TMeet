@@ -87,7 +87,7 @@ export default function MakePassword({title, description}){
 
     return (
         // Main container with conditional classes for the fade-in effect
-        <div className={`transition-opacity duration-1000 p-4 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`max-w-[700px] m-auto transition-opacity duration-1000 p-4 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <button 
                 onClick={() => navigate(-1)} 
                 className="h-[50px] w-[50px] flex justify-center items-center text-gray-500 text-5xl bg-slate-300 rounded-[50%]"

@@ -72,7 +72,7 @@ export default function Meetings() {
                 : <Header isPrincippal="false" />
             }            
             {/* Main content area grid for meeting cards */}
-            <div className="p-4 grid gap-2 md:grid-cols-2">
+            <div className="max-w-[700px] m-auto p-4 grid gap-2 md:grid-cols-2">
                 {meetings.map(meeting => (
                     // Individual meeting card
                     <div key={meeting.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
