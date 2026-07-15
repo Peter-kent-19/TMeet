@@ -30,7 +30,7 @@ export default function MakePassword({title, description}){
     // Hook to handle programmatic navigation
     const navigate = useNavigate();
 
-    // Function to handle the registration form completion
+    // Function to handle the registration form
     const handleContinueForm = (e) => {
         if (e) e.preventDefault();
 

@@ -1,5 +1,5 @@
 // Import Link for navigation
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import SignOutIcon from '@iconify-react/akar-icons/sign-out';
 import UserBoldIcon from '@iconify-react/solar/user-bold';
@@ -46,27 +46,35 @@ export default function Header({isPrincippal}) {
             {/* Bottom navigation section */}
             <div className="py-4 items-center text-[14px] bg-slate-900 flex justify-evenly">
                 {/* Link to the meetings management page */}
-                <Link to="/meets">
-                    <div className="text-blue-500 justify-center items-center flex gap-[2px] flex-wrap">
+                <NavLink to="/meets" className={({isActive}) => 
+                isActive 
+                ? "text-blue-500"
+                : "text-gray-500"
+                }>
+                    <div className="justify-center items-center flex gap-[2px] flex-wrap">
                         <TeamMeetingIcon height="1em" /> 
                         Meetings
                     </div>
-                </Link>
+                </NavLink>
                 
                 {/* Link to the main announcements page (home) */}
-                <Link to="/">
-                    <div className="text-slate-500 justify-center items-center flex gap-[2px] flex-wrap">
+                <NavLink to="/" className={({isActive}) => 
+                isActive 
+                ? "text-blue-500"
+                : "text-gray-500"
+                }>
+                    <div className="justify-center items-center flex gap-[2px] flex-wrap">
                         <NotificationOutlinedIcon height="14" />
                         Announcements
                     </div>
-                </Link>
+                </NavLink>
                 
                 
                 {/* Show link button to the creation page */}
                 {isPrincippal === 'true'  
-                    ?<Link to='/create'>
+                    ?<NavLink to='/create'>
                         <button className='bg-blue-500 py-[5px] px-3 text-white rounded-xl'>+ create</button>
-                    </Link>
+                    </NavLink>
                 : ''}
             </div>
         </div>
