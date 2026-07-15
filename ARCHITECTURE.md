@@ -14,7 +14,7 @@ TMeet is a React-based web application built with Vite and Tailwind CSS. It focu
 The application uses a client-side authentication pattern:
 1.  **Registration Flow**: 
     - `Signin.jsx` stores partial registration data in `localStorage` under `tempRegData`.
-    - `MakePassword.jsx` consumes this data safely (with fallbacks if the page is refreshed or accessed directly), collects the password, validates the inputs (verifies they are not empty, are at least 6 characters long, and match the confirmation password), saves the complete user object to the `users` array in `localStorage`, sets the `currentUser` session to log the user in, and redirects to the dashboard.
+    - `MakePassword.jsx` consumes this data safely (with fallbacks if the page is refreshed or accessed directly), collects the password, validates the inputs (verifies they are not empty, are at least 6 characters long, and match the confirmation password), and saves the complete user object to the `users` array in `localStorage`. If a user with the same email already exists in the `users` array, it filters that entry out before pushing the new registration (effectively performing an 'upsert' operation). It then sets the `currentUser` session to log the user in, and redirects to the dashboard.
 2.  **Login Flow**: 
     - `Login.jsx` verifies provided credentials against the `users` array in `localStorage`.
     - Upon success, the user object is set as the active `currentUser` session.
